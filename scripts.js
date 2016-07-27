@@ -7,15 +7,15 @@ function whatIsInAName(collection, source) {
   // Only change code below this line
   var searchkey=Object.keys(source);
   for (var i = 0; i < collection.length; i++) {
-    var result = false;
+    var result = 0;
     for (var j = 0; j < searchkey.length; j++) {
-      if(collection[i].hasOwnProperty(searchkey[j]))
+      if(collection[i].hasOwnProperty(searchkey[j])&&collection[i][searchkey[j]]===source[searchkey[j]])
        {
-      result=true;
+      result++;
 
        }
     }
-    if(result===true)
+    if(result>=searchkey.length)
     {
       arr.push(collection[i]);
 
